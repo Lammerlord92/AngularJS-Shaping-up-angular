@@ -1,0 +1,18 @@
+[{
+  name:'Dodecahedron',
+  price:2.95,
+  description:'. . .',
+  images:[
+    "dodecahedron.jpg"
+  ],
+  reviews:[]
+},{
+  name:'Pentagonal Gem',
+  price:5.95,
+  description:'. . .',
+  images:[{
+    full:'dodecahedron.jpg',
+  }],
+  reviews:[]
+}
+]

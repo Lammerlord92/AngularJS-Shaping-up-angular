@@ -3,9 +3,13 @@
   var app=angular.module('gemStore',['store-products']);
 
 
-  app.controller('StoreController',function(){
-    this.products=gems;
-  });
+  app.controller('StoreController',['$http',function($http){
+    var store=this;
+    store.products=[];
+    $http.get('/products.json').success(function(data){
+      store.products=data;
+    });
+  }]);
 
 
   app.controller("ReviewController",function(){
@@ -17,26 +21,4 @@
       this.review={};
     }
   });
-
-
-
-
-  var gems=[{
-    name:'Dodecahedron',
-    price:2.95,
-    description:'. . .',
-    images:[
-      "dodecahedron.jpg"
-    ],
-    reviews:[]
-  },{
-    name:'Pentagonal Gem',
-    price:5.95,
-    description:'. . .',
-    images:[{
-      full:'dodecahedron.jpg',
-    }],
-    reviews:[]
-  }
-]
 })();
