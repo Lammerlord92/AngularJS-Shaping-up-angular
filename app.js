@@ -1,6 +1,6 @@
 
 (function functionName() {
-  var app=angular.module('gemStore',[]);
+  var app=angular.module('gemStore',['store-products']);
 
 
   app.controller('StoreController',function(){
@@ -19,29 +19,7 @@
   });
 
 
-  app.directive('productTitle',function(){
-    return{
-      restrict:'E',
-      templateUrl:'product-title.html'
-    };
-  });
 
-  app.directive('productPanels',function(){
-    return{
-      restrict:'E',
-      templateUrl:'product-panels.html',
-      controller:function(){
-        this.tab=1;
-        this.selectTab=function(setTab){
-          this.tab=setTab;
-        };
-        this.isSelected=function(checkTab){
-          return this.tab===checkTab;
-        };
-      },
-      controllerAs:'panels'
-    };
-  });
 
   var gems=[{
     name:'Dodecahedron',
