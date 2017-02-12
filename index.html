@@ -2,6 +2,9 @@
 <html ng-app="gemStore">
   <head>
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="application.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
   <body ng-controller="StoreController as store">
     <ul class="list-group">
@@ -40,7 +43,7 @@
             </blockquote>
 
             <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
-                                    ng-submit="reviewCtrl.addReview(product)" novalidate>
+                ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
               <blockquote>
                 <b>Stars: {{reviewCtrl.review.stars}}</b>
                 {{reviewCtrl.review.body}}
@@ -58,7 +61,7 @@
                         </textarea>
               </fieldset>
               <fieldset class="form-group">
-                 <input ng-model="reviewCtrl.review.author" type="email" required
+                 <input ng-model="reviewCtrl.review.author" type="email"
                         class="form-control" placeholder="jimmyDean@example.org" title="Email" />
                </fieldset>
                <fieldset class="form-group">
@@ -73,8 +76,7 @@
       </li>
     </ul>
 
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+
 
   </body>
 </html>
